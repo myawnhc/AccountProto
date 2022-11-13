@@ -1,0 +1,86 @@
+syntax = "proto3";
+package account;
+option java_package = "org.hazelcast.msfdemo.acctsvc.events";
+
+service Account {
+    rpc Open (OpenAccountRequest) returns (OpenAccountResponse) {}
+    rpc Deposit (AdjustBalanceRequest) returns (AdjustBalanceResponse) {}
+    rpc Withdraw (AdjustBalanceRequest) returns (AdjustBalanceResponse) {}
+    rpc Payment (AdjustBalanceRequest) returns (AdjustBalanceResponse) {}
+    rpc CheckBalance (CheckBalanceRequest) returns (CheckBalanceResponse) {}
+    rpc TransferMoney (TransferMoneyRequest) returns (TransferMoneyResponse) {}
+    rpc AllAccountNumbers (AllAccountsRequest) returns (AllAccountsResponse) {}
+    rpc TotalAccountBalances (TotalBalanceRequest) returns (TotalBalanceResponse) {}
+    rpc RequestAuth (AuthorizationRequest) returns (AuthorizationResponse) {}
+
+    // NOT IMPLEMENTED YET:
+    rpc SubscribeToAccountOpened (SubscribeRequest) returns (stream AccountOpened) {}
+    rpc SubscribeToBalanceChanged (SubscribeRequest) returns (stream BalanceChanged) {}
+}
+
+message OpenAccountRequest {
+    string accountName = 1;
+    int32 initialBalance = 2;
+}
+
+message OpenAccountResponse {
+    string accountNumber = 1;
+}
+
+message AdjustBalanceRequest {
+    string accountNumber = 1;
+    int32 amount = 2;
+}
+
+message AdjustBalanceResponse {
+    int32 newBalance = 1;
+}
+
+message CheckBalanceRequest {
+    string accountNumber = 1;
+}
+
+message CheckBalanceResponse {
+    int32 balance = 1;
+}
+
+message TransferMoneyRequest {
+    string fromAccountNumber = 1;
+    string toAccountNumber = 2;
+    int32 amount = 3;
+}
+
+message TransferMoneyResponse {
+    bool succeeded = 1;
+}
+
+message AllAccountsRequest {}
+message AllAccountsResponse {
+    repeated string accountNumber = 1;
+}
+
+message TotalBalanceRequest {}
+message TotalBalanceResponse {
+    int64 totalBalance = 1;
+}
+
+message AuthorizationRequest {
+    string accountNumber = 1;
+    int32 requestedAmount = 2;
+}
+
+message AuthorizationResponse {
+    bool approved = 1;
+}
+
+message SubscribeRequest {}
+message AccountOpened {
+    string accountNumber = 1;
+    string accountName = 2;
+    int32 initalBalance = 3;
+}
+message BalanceChanged {
+    string accountNumber = 1;
+    int32 changeAmount = 2;
+    int32 newBalance = 3;
+}
