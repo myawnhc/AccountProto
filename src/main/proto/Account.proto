@@ -29,7 +29,8 @@ message OpenAccountResponse {
 
 message AdjustBalanceRequest {
     string accountNumber = 1;
-    int32 amount = 2;
+    string eventName = 2;
+    int32 amount = 3;
 }
 
 message AdjustBalanceResponse {
