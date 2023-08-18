@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fd99c4e1-a067-444a-9e38-abf307deca86" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +29,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/myawn/Documents/GitHub/AccountProto/src/main/proto&quot;
   }
 }</component>
@@ -59,12 +61,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673893716794</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Updated protobuf-java dependency from 3.12.0 to 3.16.3 due to CVEs">
+      <option name="closed" value="true" />
+      <created>1692274972535</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1692274972535</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Add eventName to AdjustBalanceRequest message &#10;Fix groupid in pom" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add eventName to AdjustBalanceRequest message &#10;Fix groupid in pom" />
+    <MESSAGE value="Updated protobuf-java dependency from 3.12.0 to 3.16.3 due to CVEs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated protobuf-java dependency from 3.12.0 to 3.16.3 due to CVEs" />
   </component>
 </project>
